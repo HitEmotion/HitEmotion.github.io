@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="HitEmotion">
+  <meta name="keywords" content="Theory of Mind, Multimodal Emotion Reasoning, HitEmotion, TMPO, MLLM">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unveiling the Cognitive Compass: Theory-of-Mind–Guided Multimodal Emotion Reasoning</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/icon.jpeg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+
+            <h1 class="title is-1 publication-title">
+              Unveiling the Cognitive Compass:<br>
+              Theory-of-Mind–Guided Multimodal Emotion Reasoning
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><b>Meng Luo</b><sup>1</sup>,</span>
+              <span class="author-block"><b>Bobo Li</b><sup>1</sup>,</span>
+              <span class="author-block"><b>Shize Zhang</b><sup>1</sup>,</span>
+              <span class="author-block"><b>Qiuchan Chen</b><sup>2</sup>,</span>
+              <span class="author-block"><b>Menglu Han</b><sup>2</sup>,</span><br>
+              <span class="author-block"><b>Wenhao Chen</b><sup>1</sup>,</span>
+              <span class="author-block"><b>Yanxiang Huang</b><sup>3</sup>,</span>
+              <span class="author-block"><b>Hao Fei</b><sup>1</sup>,</span>
+              <span class="author-block"><b>Mong-Li Lee</b><sup>1</sup>,</span>
+              <span class="author-block"><b>Wynne Hsu</b><sup>1</sup></span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>National University of Singapore</span> &nbsp;
+              <span class="author-block"><sup>2</sup>Huazhong University of Science and Technology</span> &nbsp;
+              <span class="author-block"><sup>3</sup>Hong Kong Polytechnic University</span>
+            </div>
+
+            <br>
+
+            <span class="author-block" style="font-size: 20px;">
+              ICLR 2026
+            </span>
+            <br>
+            <span class="author-block" style="font-size: 18px;">
+              Correspondence: Hao Fei (haofei37@nus.edu.sg)
+            </span>
+
+            <br><br>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+
+                <!-- Paper Link: 你未提供 arXiv 或 pdf 链接，先留占位；填上真实链接即可 -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Code & Data: 使用你提供的匿名仓库链接 -->
+                <span class="link-block">
+                  <a href="https://anonymous.4open.science/r/Emotional-Intelligence-9FB1/"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code & Data</span>
+                  </a>
+                </span>
+
+                <!-- Poster Link: 你未提供 poster 链接，先留占位 -->
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-chalkboard"></i>
+                    </span>
+                    <span>Poster</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <h2 class="title is-3">Abstract</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              Despite rapid progress in multimodal large language models (MLLMs), their capability for deep emotional
+              understanding remains limited.
+              We argue that genuine affective intelligence requires explicit modeling of Theory of Mind (ToM), the
+              cognitive substrate from which emotions arise.
+              To this end, we introduce HitEmotion, a ToM-grounded hierarchical benchmark that diagnoses capability
+              breakpoints across increasing levels of cognitive depth.
+              Second, we propose a ToM-guided reasoning chain that tracks mental states and calibrates cross-modal
+              evidence to achieve faithful emotional reasoning.
+              We further introduce TMPO, a reinforcement learning method that uses intermediate mental states as
+              process-level supervision to guide and strengthen model reasoning.
+              Extensive experiments show that HitEmotion exposes deep emotional reasoning deficits in state-of-the-art
+              models, especially on cognitively demanding tasks.
+              In evaluation, the ToM-guided reasoning chain and TMPO improve end-task accuracy and yield more faithful,
+              more coherent rationales.
+              In conclusion, our work provides the research community with a practical toolkit for evaluating and
+              enhancing the cognition-based emotional understanding capabilities of MLLMs.
+            </p>
+
+            <p>
+              Dataset and code:
+              <a href="https://anonymous.4open.science/r/Emotional-Intelligence-9FB1/" style="color: magenta;">
+                Anonymous Repository
+              </a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section" style="margin-top: -10px">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <h2 class="title is-3" style="margin-top: -10px;font-size: 1.8em">What We Propose</h2>
+
+          <div class="content has-text-justified" style="text-align:left">
+            <p>
+              We tackle two core shortcomings in current multimodal emotional intelligence research:
+              (1) evaluation lacks a unified cognitive framework to pinpoint model breakpoints,
+              and (2) reasoning chains are often coherent but unfaithful without explicit mental state tracking.
+            </p>
+
+            <p><b>Contribution 1: HitEmotion Benchmark.</b><br>
+              A hierarchical, Theory-of-Mind grounded benchmark that structures multimodal emotional reasoning into
+              three levels of increasing cognitive depth:
+              Emotion Perception and Recognition, Emotion Understanding and Analysis, and Emotion Cognition and
+              Reasoning.
+            </p>
+
+            <p><b>Contribution 2: ToM-guided Reasoning and TMPO.</b><br>
+              A ToM-guided reasoning chain that explicitly tracks intermediate mental states, plus TMPO (reinforcement
+              learning) that uses those intermediate states as process-level supervision and reward signals to improve
+              robustness, faithfulness, and logical consistency.
+            </p>
+          </div>
+
+          <!-- 图示：如果你有对应图片资源，把 src 指向你的文件即可 -->
+          <!--
+        <br>
+        <div class="publication-image">
+          <img width="75%" src="./static/images/teaser.png" alt="HitEmotion teaser">
+        </div>
+        <br>
+        -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <h2 class="title is-3" style="margin-top: -10px">HitEmotion Benchmark</h2>
+
+          <div class="content has-text-justified" style="text-align:left">
+            <p>
+              We curated and aligned 24 datasets spanning sentiment, humor, sarcasm, and causal reasoning, then
+              restructured them under a Theory-of-Mind hierarchy to enable fine-grained diagnosis of cognitive depth.
+            </p>
+
+            <p>
+              The benchmark is designed to expose not just overall performance, but also where and why models fail as
+              task demands move from perception to deeper mental simulation and recursive reasoning.
+            </p>
+          </div>
+
+          <!--
+        <br>
+        <div class="publication-image">
+          <img width="75%" src="./static/images/benchmark.png" alt="Benchmark taxonomy">
+        </div>
+        <br>
+        -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+
+          <h2 class="title is-3" style="margin-top: -10px">Method: ToM-guided Reasoning and TMPO</h2>
+
+          <div class="content has-text-justified" style="text-align:left">
+            <p>
+              <b>ToM-guided reasoning chain</b> serves as a cognitive scaffold: it prompts models to explicitly track
+              beliefs, intentions, and other intermediate mental states, while calibrating cross-modal evidence for more
+              faithful emotion reasoning.
+            </p>
+
+            <p>
+              <b>TMPO</b> further optimizes this process by using intermediate mental states as process-level
+              supervision and reinforcement learning rewards, turning emotional reasoning from a generic emergent
+              behavior into a domain-acquired skill.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@misc{luo2026cognitive_compass,
+  title   = {Unveiling the Cognitive Compass: Theory-of-Mind--Guided Multimodal Emotion Reasoning},
+  author  = {Luo, Meng and Li, Bobo and Xu, Shanqing and Zhang, Shize and Chen, Qiuchan and Han, Menglu and Chen, Wenhao and Huang, Yanxiang and Fei, Hao and Lee, Mong-Li and Hsu, Wynne},
+  year    = {2026},
+  note    = {Manuscript under review},
+}</code></pre>
+    <p style="font-size: 0.95em;">
+      Note: 如果你有 arXiv 号或正式会议/期刊信息，把 BibTeX 的 @misc 改成 @article/@inproceedings 并补齐 url 或 journal/booktitle 即可。
+    </p>
+  </div>
+</section> -->
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              The website template credit to <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>,
+              licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+                Creative Commons Attribution-ShareAlike 4.0 License
+              </a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
